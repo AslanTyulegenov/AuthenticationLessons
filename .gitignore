@@ -1,3 +1,4 @@
+*.run
 *.swp
 *.*~
 project.lock.json
