@@ -1,0 +1,7 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="CompoundRunConfigurationType">
+    <toRun name="Authorization.Orders" type="LaunchSettings" />
+    <toRun name="Authorization.Users.Api" type="LaunchSettings" />
+    <method v="2" />
+  </configuration>
+</component>

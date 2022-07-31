@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>Authorization.Orders.Api</AssemblyName>
+        <RootNamespace>Authorization.Orders.Api</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Site\Index.cshtml" />
+      <AdditionalFiles Include="Views\_ViewImports.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.7" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "Authorization.Basics": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "home/index",
+      "applicationUrl": "https://localhost:7231;http://localhost:5231",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
