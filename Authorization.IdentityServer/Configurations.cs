@@ -19,6 +19,10 @@ public static class Configurations
         new ApiResource("OrdersAPI", "Orders API")
         {
             Scopes = { "OrdersAPI" }
+        },
+        new ApiResource("SwaggerAPI", "Swagger API")
+        {
+            Scopes = { "SwaggerAPI" }
         }
     };
 
@@ -52,10 +56,27 @@ public static class Configurations
             AccessTokenLifetime = 5,
             AllowOfflineAccess = true
             //AlwaysIncludeUserClaimsInIdToken = true
+        },
+        new Client
+        {
+            ClientId = "client_id_swagger",
+            ClientSecrets = {new Secret("client_secret_swagger".ToSha256())},
+            AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+            AllowedScopes =
+            {
+                "SwaggerAPI",
+                IdentityServerConstants.StandardScopes.OpenId,
+                IdentityServerConstants.StandardScopes.Profile
+            },
+            AllowedCorsOrigins = new List<string>
+            {
+                "https://localhost:5005"
+            }
         }
     };
     public static IEnumerable<ApiScope> GetApiScopes() => new List<ApiScope>
     {
-        new ApiScope("OrdersAPI")
+        new ApiScope("OrdersAPI"),
+        new ApiScope("SwaggerAPI")
     };
 }
