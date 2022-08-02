@@ -49,7 +49,7 @@ public static class Configurations
                 IdentityServerConstants.StandardScopes.OpenId,
                 IdentityServerConstants.StandardScopes.Profile
             },
-            
+
             RedirectUris = { "https://localhost:5004/signin-oidc" },
             PostLogoutRedirectUris = { "https://localhost:5004/signout-callback-oidc" },
             RequireConsent = false,
@@ -60,7 +60,7 @@ public static class Configurations
         new Client
         {
             ClientId = "client_id_swagger",
-            ClientSecrets = {new Secret("client_secret_swagger".ToSha256())},
+            ClientSecrets = { new Secret("client_secret_swagger".ToSha256()) },
             AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
             AllowedScopes =
             {
@@ -72,6 +72,23 @@ public static class Configurations
             {
                 "https://localhost:5005"
             }
+        },
+        new Client
+        {
+            ClientId = "client_id_js",
+            RequireClientSecret = false,
+            AllowedGrantTypes = GrantTypes.Code,
+            RequireConsent = false,
+            RequirePkce = true,
+            AllowedCorsOrigins = new List<string> { "https://localhost:5006" },
+            AllowedScopes =
+            {
+                "OrdersAPI",
+                IdentityServerConstants.StandardScopes.OpenId,
+                IdentityServerConstants.StandardScopes.Profile
+            },
+            RedirectUris = {"https://localhost:5006/callback.html", "https://localhost:5006/refresh.html"},
+            PostLogoutRedirectUris = {"https://localhost:5006/index.html"}
         }
     };
     public static IEnumerable<ApiScope> GetApiScopes() => new List<ApiScope>
