@@ -1,0 +1,12 @@
+﻿dotnet ef migrations add Initial --context ApplicationDbContext --output-dir Data/ApplicationDb
+dotnet ef database update --context ApplicationDbContext
+
+dotnet ef migrations add PersistedGrantDbMigration -c PersistedGrantDbContext -o Data/PersistedGrantDb
+dotnet ef database update --context PersistedGrantDbContext
+
+dotnet ef migrations add ConfigurationDbMigration -c ConfigurationDbContext -o Data/ConfigurationDb
+dotnet ef database update --context ConfigurationDbContext
+
+
+
+dotnet ef database drop --context ApplicationDbContext

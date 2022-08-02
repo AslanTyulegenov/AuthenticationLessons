@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Authorization.IdentityServer;
 
-public static class Configurations
+public static class IdentityServerConfigurations
 {
 
     public static IEnumerable<IdentityResource> GetIdentityResources() => new List<IdentityResource>

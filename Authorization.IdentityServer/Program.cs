@@ -1,3 +1,4 @@
+using System.Reflection;
 using Authorization.IdentityServer;
 using Authorization.IdentityServer.Data;
 using Authorization.IdentityServer.Services;
@@ -6,9 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var assemblyName = typeof(Program).GetTypeInfo().Assembly.GetName().Name;
 
 services.AddDbContext<ApplicationDbContext>(config => {
-    config.UseInMemoryDatabase("MEMORY");
+    config.UseNpgsql(connectionString);
 }).AddIdentity<IdentityUser, IdentityRole>(config => {
     config.Password.RequireDigit = false;
     config.Password.RequireLowercase = false;
@@ -25,10 +28,18 @@ services.ConfigureApplicationCookie(configuration => {
 
 services.AddIdentityServer()
     .AddAspNetIdentity<IdentityUser>()
-    .AddInMemoryIdentityResources(Configurations.GetIdentityResources())
-    .AddInMemoryApiResources(Configurations.GetApiResources())
-    .AddInMemoryApiScopes(Configurations.GetApiScopes())
-    .AddInMemoryClients(Configurations.GetClients())    
+    .AddConfigurationStore(options => {
+        options.ConfigureDbContext = b => b.UseNpgsql(connectionString,
+        sql => sql.MigrationsAssembly(assemblyName));
+    })
+    .AddOperationalStore(options => {
+        options.ConfigureDbContext = b => b.UseNpgsql(connectionString,
+        sql => sql.MigrationsAssembly(assemblyName));
+    })
+    // .AddInMemoryIdentityResources(IdentityServerConfigurations.GetIdentityResources())
+    // .AddInMemoryApiResources(IdentityServerConfigurations.GetApiResources())
+    // .AddInMemoryApiScopes(IdentityServerConfigurations.GetApiScopes())
+    // .AddInMemoryClients(IdentityServerConfigurations.GetClients())    
     .AddProfileService<ProfileService>()
     .AddDeveloperSigningCredential();
 
