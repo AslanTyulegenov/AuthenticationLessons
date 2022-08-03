@@ -3,7 +3,7 @@
     "Authorization.IdentityServer": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
+      "launchBrowser": true,
       "applicationUrl": "https://localhost:5003;",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

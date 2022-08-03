@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.Swagger", "Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.JavaScript", "Authorization.JavaScript\Authorization.JavaScript.csproj", "{28AAAF61-DC1C-4EEE-98C1-50A393EAC35E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.CertificateGenerator", "Authorization.CertificateGenerator\Authorization.CertificateGenerator.csproj", "{4B41A541-9121-421C-8B35-5D1ED7976067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{28AAAF61-DC1C-4EEE-98C1-50A393EAC35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28AAAF61-DC1C-4EEE-98C1-50A393EAC35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28AAAF61-DC1C-4EEE-98C1-50A393EAC35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B41A541-9121-421C-8B35-5D1ED7976067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B41A541-9121-421C-8B35-5D1ED7976067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B41A541-9121-421C-8B35-5D1ED7976067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B41A541-9121-421C-8B35-5D1ED7976067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +94,7 @@ Global
 		{0FF1F54F-8B6F-4CCB-A099-31DFDC8833B1} = {10004808-73D5-4345-A8A4-396ADBEFA673}
 		{7926E4D1-5ED6-43C7-A750-9B9B756BE23E} = {10004808-73D5-4345-A8A4-396ADBEFA673}
 		{28AAAF61-DC1C-4EEE-98C1-50A393EAC35E} = {10004808-73D5-4345-A8A4-396ADBEFA673}
+		{4B41A541-9121-421C-8B35-5D1ED7976067} = {10004808-73D5-4345-A8A4-396ADBEFA673}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {372BE119-4AD4-4C4C-9570-D392A270CAAD}
